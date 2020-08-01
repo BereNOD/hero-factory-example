@@ -5,13 +5,14 @@ import {
     Route
 } from "react-router-dom";
 
+import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
 const Router = () => (
     <BrowserRouter>
         <Switch>
             <Route path="/" exact>
-                <p>Hello, Hero factory!</p>
+                <Home />
             </Route>
             <Route>
                 <NotFound />

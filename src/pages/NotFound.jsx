@@ -1,18 +1,33 @@
 import * as React from 'react'
+import { withStyles } from '@material-ui/core/styles';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
+import Link from './../components/Link'
+
+const styles = {
+    section: {
+        margin: 'auto'
+    }
+}
 
 class NotFound extends React.Component {
     render = () => (
-        <React.Fragment>
-            <CssBaseline />
-            <Container maxWidth="lg">
-                <Typography component="div" style={{ backgroundColor: '#cfe8fc', maxHeight: '1024px', height: '100vh' }} />
-            </Container>
-        </React.Fragment>
+        <section className={this.props.classes.section}>
+            <Typography
+                variant="h1"
+                component="h2"
+                gutterBottom
+            >
+                Page not found
+            </Typography>
+            <Link to="/">
+                <ArrowBackIosIcon />
+                Back to home page
+            </Link>
+        </section>
     )
 }
 
-export default NotFound
+export default withStyles(styles)(NotFound)
